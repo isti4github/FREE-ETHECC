@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Kenneth Hu" />
+    <title>Web3js</title>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <script src="js/web3.min.js"></script>
+    <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Web3.js</h1>
+      <button id="connectMetamask">Connect to Metamask</button>
+      <hr />
+      <p>Account : <input id="Account" type="text" /></p>
+      <p>Balance : <input id="Balance" type="text" /></p>
+
+      <hr />
+      <label for="name" class="col-lg-2 control-label"><h3>Transfer</h3></label>
+      <p>From : &nbsp &nbsp &nbsp <input id="From" type="text" /></p>
+      <p>To : &nbsp &nbsp &nbsp &nbsp &nbsp <input id="To" type="text" /></p>
+      <p>Amount : &nbsp <input id="Amount" type="text" /></p>
+      <button id="Transfer">Transfer</button>
+      <p>Transaction Hash : &nbsp <span id="Tx"></span></p>
+
+      <hr />
+      <label for="name" class="col-lg-2 control-label"
+        ><h3>Get free EHT-ECC</h3></label
+      >
+      <p>Current amount &nbsp <span id="currentAmount"></span></p>
+      <button id="RequestFreETH">Request</button>
+      <div style="display: none" id="rloader_div">sending transaction...</div>
+      <p>Transaction Hash : &nbsp <span id="Request-Hash"></span></p>
+      <hr />
+      <label for="name" class="col-lg-2 control-label"
+        ><h3>Donate EHT-ECC</h3></label
+      >
+      <p>Current amount &nbsp <span id="currentAmount"></span></p>
+      <p>Amount : &nbsp <input id="dAmount" type="text" /></p>
+      <button id="DonateFreETH">Donate</button>
+      <div style="display: none" id="dloader_div">sending transaction...</div>
+      <p>Transaction Hash : &nbsp <span id="Donate-Hash"></span></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
