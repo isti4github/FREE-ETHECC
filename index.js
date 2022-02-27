@@ -63,8 +63,10 @@ const free_eth_contract = new web3.eth.Contract(
 
 //To connect with Metamask
 $("#connectMetamask").click(async function () {
-  
-  accounts = await ethereum.request({ method: "eth_requestAccounts" });
+
+  if(window.ethereum){
+
+    accounts = await ethereum.request({ method: "eth_requestAccounts" });
 
   /*Get Accont */
   $("#Account").val(accounts[0]);
@@ -74,6 +76,14 @@ $("#connectMetamask").click(async function () {
   var result = await free_eth_contract.methods.getBalance(accounts[0]).call();
 
   $("#currentAmount").text(result);
+
+  }
+  else{
+    console.log("Please install MetaMAsk");
+  }
+  
+
+
 });
 
 async function getBalance(account) {
