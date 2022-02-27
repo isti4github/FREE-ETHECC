@@ -60,14 +60,19 @@ const free_eth_contract = new web3.eth.Contract(
   _contract_address
 );
 
+
+//To connect with Metamask
 $("#connectMetamask").click(async function () {
+  
   accounts = await ethereum.request({ method: "eth_requestAccounts" });
-  /*Get Balance */
+
+  /*Get Accont */
   $("#Account").val(accounts[0]);
 
-  getBalance(accounts[0]);
+  //getBalance(accounts[0]);
 
-  var result = await free_eth_contract.methods.getBalance().call();
+  var result = await free_eth_contract.methods.getBalance(accounts[0]).call();
+
   $("#currentAmount").text(result);
 });
 
